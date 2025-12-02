@@ -14,3 +14,10 @@ jobs:
       with:
           username: ${{ secrets.DOCKERHUB_USERNAME }}
           password: ${{ secrets.DOCKERHUB_TOKEN }}
+    - name: Building Image
+      uses: docker/build-push-action@v6.18.0
+        with:
+          context: ./src
+          file: ./src/Dockerfile
+          push: true
+          tags: kubeivan/first-pipeline:v${{github.run_number}}    
