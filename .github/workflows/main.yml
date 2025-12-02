@@ -10,7 +10,7 @@ jobs:
     - name: Getting the Code
       uses: actions/checkout@v6.0.1
     - name: Docker Hub Authentication
-      uses: docker/login-action@v3
+      uses: docker/login-action@v3.6.0
       with:
           username: ${{ vars.DOCKERHUB_USERNAME }}
           password: ${{ secrets.DOCKERHUB_TOKEN }}
